@@ -31,7 +31,10 @@ Module.register("MMM-JsonTable", {
 
   // Request node_helper to get json from url
   getJson () {
-    this.sendSocketNotification("MMM-JsonTable_GET_JSON", {url:this.config.url,id:this.identifier});
+    this.sendSocketNotification("MMM-JsonTable_GET_JSON", {
+      url: this.config.url,
+      id: this.identifier
+    });
   },
 
   socketNotificationReceived (notification, payload) {

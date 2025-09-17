@@ -14,14 +14,14 @@ module.exports = NodeHelper.create({
       .then((json) => {
         // Send the json data back with the url to distinguish it on the receiving part
         self.sendSocketNotification("MMM-JsonTable_JSON_RESULT", {
-          id:payload.id,
+          id: payload.id,
           data: json
         });
       });
   },
 
   // Subclass socketNotificationReceived received.
-  socketNotificationReceived (notification, payload ) {
+  socketNotificationReceived (notification, payload) {
     if (notification === "MMM-JsonTable_GET_JSON") {
       this.getJson(payload);
     }
